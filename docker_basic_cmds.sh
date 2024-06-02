@@ -1,4 +1,4 @@
-sudo -I
+sudo -i
 
 yum install docker -y
 docker version
