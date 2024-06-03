@@ -429,5 +429,23 @@ worker nodes will take the container and manage them.
 
 
 
+docker rmi -f $(docker images -q)
+//to remove all the images are present in docker
+
+SET-UP:
+create 3 servers (1=manager 2=worker) (all traffic is must)
+install docker and set the hostnames
+
+hostnamectl sethostname manager
+hostnamectl sethostname worker-1
+hostnamectl sethostname worker-2
+
+manager node: docker swarm init
+copy the token to all worker nodes
+
+
+
+
+
 
 
