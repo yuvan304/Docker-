@@ -276,8 +276,42 @@ create index.html
 docker build -t movies:v1 .
 docker run -itd --name movies -p 81:80 movies:v1
 
+1.index.html (movies)
+docker build -t movies:v1 .
+docker run -itd --name movies -p 81:80 movies:v1
+public-ip:81
+
+2.index.html (movies = train)
+docker build -t train:v1 .
+docker run -itd --name train -p 82:80 train:v1
+public-ip:82
+
+3.index.html (train = dth)
+docker build -t dth:v1 .
+docker run -itd --name dth -p 83:80 dth:v1
+public-ip:83
+
+4.index.html (dth = recharge)
+docker build -t recharge:v1 .
+docker run -itd --name recharge -p 84:80 recharge:v1
+public-ip:84
+
+
+DOCKER COMPOSE:
+Its a tool used to launch multiple containers.
+we can create multiple containers on single hosts.
+All of the services information we are going to write on a file.
+Here we use docker-compose/compose file.
+It will be on yaml format.
+we use key-value pair (dictionary) (.yml or .yaml)
 
 
 
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ls /usr/local/bin/
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
 
 
