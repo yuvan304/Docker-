@@ -417,6 +417,16 @@ docker tag train:v1 yuvansai13/train
 docker push yuvansai13/train
 //repositary had been added automatically
 ------------------------------------------------------------------------------------------------------------------------------------
+DOCKER SWARM:
+
+high avaliability: deploying app on more than one server means using the cluster.
+docker swarm is an container orchestration tool.
+it is used ti manage multiple containers on multiple nodes
+each node will have a copy of single container.
+here we have manager and worker nodes.
+manager node will create containers and send to worker nodes.
+worker nodes will take the container and manage them.
+
 
 
 
