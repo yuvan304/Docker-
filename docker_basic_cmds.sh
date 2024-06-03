@@ -262,6 +262,19 @@ docker run -it --name cont1 -p 8080:8080 jenkins/jenkins:lts
 // jenkins setup using this singke command
 
 
+---------------------------------------------------------------------------------------------------------------------------------------
+vim dockerfile
+
+FROM ubuntu
+RUN apt update -y
+RUN apt install apache2 -y
+COPY index.html /var/www/html
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+
+create index.html
+
+docker build -t movies:v1 .
+docker run -itd --name movies -p 81:80 movies:v1
 
 
 
