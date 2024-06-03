@@ -155,6 +155,116 @@ const   :   docker run -it --name cont3 netflix:v2
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
+DOCKER - VOLUME:
+
+Method-01
+
+Docker ubuntu
+VOLUME ["/volume1"]
+
+docker build -t netflix:v1 .
+docker run -it --name cont1 netflix:v1
+cd volume1
+touch fike{1..10}
+
+docker run -it --name cont2 --volumes-from cont1 --privileged=true ubuntu
+cd colume1
+ll
+
+
+Method-02
+
+docker run -it --name cont3 -v / volume2 ubuntu
+ll
+cd volume2
+touch java{1..10}
+
+docker run -it --name const4 from cont3 --privileged=true ubuntu
+ll
+
+
+Method-03
+
+VOLUME MOUNTING:
+
+volume commands
+docker volume create volume1
+docker volume ls
+docker volume inspect volume1
+
+cd/var/lib/docker/volumes/volume2/_data
+touch python{1..10}
+ll
+
+docker run -it --name cont2 --mount source=volume3,destination=/volume3 ubuntu
+
+cd volume3/
+ll
+
+
+docker volume create volume4
+docker volume ls
+docker volume inspect volume4
+cd/var/lib/docker/volumes/volume4/_data
+touch php{1..10}
+
+docker run -it --name cont5--mount source=volume4,destination/@ubuntu
+
+method -04: Moving Files from local to container:
+
+create a container and attach a volume for it
+
+touch yuvan{1..10}
+docker inspect cont6
+docker volume inspect volume4
+cp * /var/lib/docker/volume4/_data
+ll
+
+method-05:
+
+docker run -it --name cont7 -v /root=/abc ubuntu
+ll
+
+docker run -it --name cont8 -v / root=abc ubuntu
+//translate one container to another container
+
+docker run -it --name cont9 -v /abc ubuntu
+//create a volume for abc
+
+docker run -it --name cont12 -v /home/ec2-user:abcd ubuntu
+
+
+SYSTEM COMMANDS:
+
+docker system df
+//to show the docker components resource utilization
+
+docker system df -v
+//to show the docker components resource utilization individually
+
+
+docker pull centos
+
+docker pull amazonlinux
+docker system prune
+//to remove unused docker components
+y
+docker kill $(docker ps -a -q)
+
+docker network create yuvan
+docker network create yuvan2
+//to create a network
+docker system prune
+y
+docker system events
+
+docker run -it --name cont1 -p 8080:8080 jenkins/jenkins:lts
+// jenkins setup using this singke command
+
+
+
+
+
 
 
 
