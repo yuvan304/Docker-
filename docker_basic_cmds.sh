@@ -443,6 +443,23 @@ hostnamectl sethostname worker-2
 manager node: docker swarm init
 copy the token to all worker nodes
 
+docker service ls                    : to list services
+docker service ps train              : to list containers for train
+docker service inspect train         : to get complete info of train service
+docker service scale train=10        : to scale the services
+docker service scale train=6         : to scale the services
+docker service rollback train        : to back to previous state
+docker service rm train              : to scale the services
+
+
+SELF HEALING: automatically recreates container itself
+
+CLUSTER LEVEL ACTIVITIES
+docker swarm leave(worker node) : to down the worker noe
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
