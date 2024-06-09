@@ -1,6 +1,5 @@
 DOCKER PROJECT:
 
-
 yum install docker -y
 systemctl start docker
 systemctl status docker
@@ -10,7 +9,6 @@ RUN apt-get update -y
 RUN apt-get install apache2 -y
 COPY index.html /var/www/html/
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
-
 
 
 DOCKER FILE	: To create image by automation.
